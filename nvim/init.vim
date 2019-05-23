@@ -14,6 +14,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
 Plug 'machakann/vim-highlightedyank'
 Plug 'andymass/vim-matchup'
+Plug 'chriskempson/base16-vim'
+
 
 " Fuzzy finder
 Plug 'airblade/vim-rooter'
@@ -35,6 +37,27 @@ Plug 'cespare/vim-toml'
 Plug 'rust-lang/rust.vim'
 
 call plug#end()
+
+
+if has('nvim')
+    set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+    set inccommand=nosplit
+    noremap <C-q> :confirm qall<CR>
+end
+
+" deal with colors
+if !has('gui_running')
+  set t_Co=256
+endif
+if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
+  " screen does not (yet) support truecolor
+  set termguicolors
+endif
+" Colors
+set background=dark
+colorscheme base16-gruvbox-dark-hard
+
+
 
 set background=dark
 syntax on
@@ -80,7 +103,6 @@ let g:ale_sign_info = "i"
 let g:ale_sign_hint = "➤"
 
 "Completion
-autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 " tab to select
 " and don't hijack my enter key
@@ -123,7 +145,8 @@ set nolist
 set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
 " Ctrl+c and Ctrl+j as Esc
-inoremap kj <Esc>
-vnoremap kj <Esc>
-inoremap kj <Esc>
-vnoremap kj <Esc>
+inoremap jk <Esc>
+vnoremap jk <Esc>
+inoremap jk <Esc>
+vnoremap jk <Esc>
+colorscheme base16-default-dark
