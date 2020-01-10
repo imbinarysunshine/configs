@@ -24,6 +24,7 @@ Plug 'chriskempson/base16-vim'
 "Plug 'racer-rust/vim-racer'
 Plug 'ncm2/ncm2'
 Plug 'tell-k/vim-autopep8'
+Plug 'vimwiki/vimwiki'
  
 " Completion plugins
 Plug 'ncm2/ncm2-bufword'
@@ -131,7 +132,6 @@ set nofoldenable
 set ruler " Where am I?
 set ttyfast
 " https://github.com/vim/vim/issues/1735#issuecomment-383353563
-set lazyredraw
 set synmaxcol=500
 set laststatus=2
 set relativenumber " Relative line numbers
